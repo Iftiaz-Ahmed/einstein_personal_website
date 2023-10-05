@@ -1,0 +1,49 @@
+@media (max-width: 1385px) {
+    .blogs .sub{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 1030px) {
+    .container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "nav"
+        "aboutPhoto"
+        "aboutDesc"
+        "paperSection"
+        "hobbiesSection"
+        "imagesSection"
+        "blogSection"
+        "footer"
+        ;
+    }
+
+    .description{
+        padding: 0px 20px;
+    }
+
+    .photo{
+        width: 90%;
+        height: auto;
+    }
+
+    .blogs .main{
+        text-align: center;
+        grid-template-columns: 1fr;
+        grid-template-areas:  
+        "blogImage"
+        "blogContent";
+    }
+    
+    .blogs .main img{
+        border-radius: 10px;
+        width: 100%;
+    }
+
+    .blogs .content {
+        padding: 40px 0px;
+        margin: 0px;
+    }
+}

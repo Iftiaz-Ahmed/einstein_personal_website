@@ -1,0 +1,31 @@
+@media (min-width: 1800px) {
+    
+    .description{
+        grid-area: aboutDesc;
+        padding: 20px;
+        margin-left: 50px;
+    }
+
+    .photo {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .papers {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px; 
+    }
+
+    .images{
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px; 
+        padding: 30px 40px;
+    }
+
+    .blogs .sub{
+        margin-top: 120px;
+        grid-template-columns: repeat(4, 1fr);
+        padding: 0px 100px;
+    }
+
+}

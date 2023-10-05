@@ -1,0 +1,372 @@
+:root{
+    --primaryColor: #2e304b;
+    --secondaryColor: #fd8e8e;
+    --fontSize: 20px;
+}
+
+body{
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    color: var(--secondaryColor);
+    font-size: var(--fontSize);
+    background-color: var(--primaryColor);
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    grid-template-areas: 
+    "nav nav"
+    "aboutDesc aboutPhoto"
+    "paperSection paperSection"
+    "hobbiesSection hobbiesSection"
+    "imagesSection imagesSection"
+    "blogSection blogSection"
+    "footer footer"
+    ;
+}
+
+nav{
+    grid-area: nav;
+    display: grid;
+    grid-template-columns: 0.2fr 1fr;
+    grid-template-areas: "logo menu";
+}
+
+.logo{
+    grid-area: logo;
+    padding-left: 20px;
+}
+
+.menu{
+    grid-area: menu;
+    text-align: right;
+    padding-right: 20px;
+}
+
+.menu a{
+    text-decoration: none;
+    color: var(--secondaryColor);
+}
+
+.menu ul li{
+    display: inline-block;
+    margin: 0 px 5px;
+    padding: 5px;
+    transition: 0.4s;
+    border: 3px solid transparent;
+}
+
+.menu ul li:hover{
+    border-width: 3px 3px 3px 3px;
+    border-color: transparent var(--secondaryColor) var(--secondaryColor) transparent;
+}
+
+.description{
+    grid-area: aboutDesc;
+    padding: 20px;
+    margin-left: 20px;
+}
+
+.photo{
+    margin-top: 20px;
+    grid-area: aboutPhoto;
+    position: relative;
+    width: 600px;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+}
+
+.photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondaryColor);
+    opacity: 0.2;
+    transition: opacity 0.3s;
+}
+
+.photo:hover .overlay {
+    opacity: 0;
+}
+
+.paperSection{
+    grid-area: paperSection;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.papers {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px; 
+    padding: 0px 20px;
+}
+
+.paper{
+    /* width: 300px; */
+    height: 280px;
+    margin: 20px;
+    border: 1px solid var(--secondaryColor);
+}
+
+.paper:hover{
+    border: 2px solid var(--secondaryColor);
+}
+
+.paperIcon{
+    display: block;
+    font-size: 80px;
+    margin-top: 20px;
+}
+
+.paper h4 {
+    padding: 0px 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.paper p{
+    font-size: 15px;
+}
+
+.hobbiesSection{
+    grid-area: hobbiesSection;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.aboutButton{
+    text-decoration: none;
+    border: 2px solid var(--secondaryColor);
+    background-color: transparent;
+    color: var(--secondaryColor);
+    border-radius: 5px;
+    font-size: var(--fontSize);
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    width: 200px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center; 
+}
+
+.hobbies {
+    display: inline-block;
+}
+
+.hobby{
+    position: relative;
+    display: block;
+    margin-bottom: 30px;
+}
+
+.hobbies img{
+    width: 500px;
+    height: 300px;
+}
+
+.contents-right {
+    position: absolute;
+    top: 50%;
+    right: -50%;
+    background-color: var(--secondaryColor);
+    color: var(--primaryColor);
+    padding: 5px 10px;
+    border: 2px solid var(--primaryColor);
+    width: 300px;
+    height: 60px;
+}
+
+.contents-left {
+    position: absolute;
+    top: 50%;
+    left: -50%;
+    background-color: var(--secondaryColor);
+    color: var(--primaryColor);
+    padding: 5px 10px;
+    border: 2px solid var(--primaryColor);
+    width: 300px;
+    height: 50px;
+}
+
+.content {
+    margin: 10px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.imagesSection{
+    grid-area: imagesSection;
+    margin-top: 100px;
+    text-align: center;
+    padding: 0px 20px;
+}
+
+.images{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px; 
+}
+
+.image{
+    height: 500px;
+    background-color: black;
+    margin: 0px 10px 10px;
+    display: inline-block;
+}
+
+.image img{
+    object-fit: fill;
+    width: 100%;
+    height: 80%;
+}
+
+.imgDesc{
+    text-align: center;
+    padding: 5px 10px;
+    font-size: var(--fontSize);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.blogSection{
+    grid-area: blogSection;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.blogs{
+    margin-top: 100px;
+}
+
+.blogs .main{
+    display: grid;
+    margin: 0px 100px;
+    padding: 0px 100px;
+    grid-template-columns: 0.2fr 1fr;
+    grid-template-areas:  
+    "blogImage blogContent";
+}
+
+.blogs .img{
+    grid-area: blogImage;
+}
+
+.blogs .content{
+    grid-area: blogContent;
+    text-align: left;
+    padding: 40px 20px;
+}
+
+.blogs h2{
+    margin: 0px;
+    margin-bottom: 5px;
+}
+
+.blogs p{
+    margin: 0px;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.blogs a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.blogs .main img{
+    border-radius: 10px;
+}
+
+.blogs .sub{
+    margin: 20px 50px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px; 
+}
+
+.blog {
+    position: relative;
+    margin: 10px;
+}
+  
+.blog .image {
+    margin: 0px;
+    display: block;
+    width: 300px;
+    height: 300px;
+    object-fit: unset;
+    border-radius: 10px;
+}
+  
+.blogOverlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--secondaryColor);
+    overflow: hidden;
+    width: 300px;
+    height: 0;
+    transition: .5s ease;
+}
+  
+.blog:hover .blogOverlay {
+    height: 100%;
+}
+  
+.blog .text {
+    color: white;
+    margin: 20px;
+    text-align: left;
+}
+
+footer{
+    display: flex;
+    grid-area: footer;
+    background-color: #232433;
+    color: var(--secondaryColor);
+    padding: 20px 0px;
+    justify-content: space-between;
+    width: 100%;
+}
+
+footer p{
+    margin: 0px;
+    padding-left: 30px;
+    font-size: var(--fontSize);
+}
+
+footer a{
+    text-decoration: none;
+}
+
+footer .socials{
+    padding-right: 30px;
+}
+
+footer .social{
+    padding: 0px 10px;
+    font-size: var(--fontSize);
+    color: var(--secondaryColor);
+}
